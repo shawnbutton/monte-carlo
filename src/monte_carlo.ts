@@ -1,6 +1,6 @@
 import * as fs from "node:fs";
 
-const runForWeek = (samples, weeks) => {
+const runForWeek = (samples: number[], weeks: number) => {
     const numSamples = samples.length
 
     const sims: number[] = []
@@ -47,7 +47,7 @@ const runSimulations = samples => {
 
 };
 
-const runForRangeOfWeeks = (samples, weeks) => {
+const runForRangeOfWeeks = (samples: number[], weeks: number) => {
     let allSims = '"95%","80%","50%","20%","5%"\n'
 
     for (let week = 1; week < weeks + 1; week++) {
