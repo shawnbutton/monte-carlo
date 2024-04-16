@@ -1,4 +1,6 @@
-const runForWeeks = (samples, weeks) => {
+import * as fs from "node:fs";
+
+const runForWeek = (samples, weeks) => {
     const numSamples = samples.length
 
     const sims: number[] = []
@@ -33,7 +35,7 @@ const runSimulations = samples => {
 
     const sims: number[] = []
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100000st; i++) {
         let index = Math.floor(Math.random() * numSamples);
         sims.push(samples[index])
     }
@@ -49,7 +51,20 @@ const loadHistory = () => {
     return [3, 10, 7, 3, 5, 12, 4, 7, 3]
 }
 
+const runForRangeOfWeeks = (samples, weeks) => {
+    let allSims = '"95%","80%","50%","20%","5%"\n'
+
+    for (let week = 1; week < weeks + 1; week++) {
+        const thisWeek = runForWeek(samples, week)
+        allSims += `${week},${thisWeek['95%']},${thisWeek['80%']},${thisWeek['50%']},${thisWeek['20%']},${thisWeek['5%']}
+`
+    }
+
+    fs.writeFileSync('output.csv', allSims)
+}
+
+
 
 export {
-    loadHistory, runSimulations, runForWeeks
+    loadHistory, runSimulations, runForWeek, runForRangeOfWeeks
 }
