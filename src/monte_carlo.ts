@@ -35,7 +35,7 @@ const runSimulations = samples => {
 
     const sims: number[] = []
 
-    for (let i = 0; i < 100000st; i++) {
+    for (let i = 0; i < 100000; i++) {
         let index = Math.floor(Math.random() * numSamples);
         sims.push(samples[index])
     }
