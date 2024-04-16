@@ -20,20 +20,11 @@ const runForWeeks = (samples, weeks) => {
 
     let results = {}
 
-    for (let i = 0; i < 100; i++) {
-        results[i + "%"] = sorted[i * 100]
+    for (let i = 0; i < 99; i++) {
+        results[i + 1 + "%"] = sorted[i * 100]
     }
 
-    const results = {
-        "95%": sorted[9500],
-        "75%": sorted[7500],
-        "50%": sorted[5000],
-        "25%": sorted[2500],
-        "5%": sorted[500]
-    }
-
-    console.log(results)
-
+    return results
 
 };
 
