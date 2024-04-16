@@ -47,10 +47,6 @@ const runSimulations = samples => {
 
 };
 
-const loadHistory = () => {
-    return [3, 10, 7, 3, 5, 12, 4, 7, 3]
-}
-
 const runForRangeOfWeeks = (samples, weeks) => {
     let allSims = '"95%","80%","50%","20%","5%"\n'
 
@@ -64,7 +60,7 @@ const runForRangeOfWeeks = (samples, weeks) => {
 }
 
 
-
 export {
-    loadHistory, runSimulations, runForWeek, runForRangeOfWeeks
+    runSimulations, runForWeek, runForRangeOfWeeks
 }
+
